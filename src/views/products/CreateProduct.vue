@@ -152,15 +152,10 @@
                     <div class="form-group">
                       <!-- Label -->
                       <label class="mb-1 form-label">
-                        Variedad
+                        Stock
                       </label>
-                      <!-- Text -->
-                      <small class="mb-2 text-muted form-text">
-                        Es la variante del producto que se visualiza en la tienda (ej. talle, color, etc)
-                      </small>
-              
                       <!-- Input -->
-                      <input type="text" class="form-control" placeholder="Ingresa la variante del producto" v-model="product.str_variant">
+                      <input type="number" class="form-control" placeholder="Ingresa la variante del producto" v-model="product.stock">
                     </div>
                   </div>
 
@@ -299,7 +294,7 @@
         },
 
         validate(){
-          if(!this.product.name || !this.product.price || !this.product.image || !this.product.category || !this.product.str_variant || !this.product.subcategory){
+          if(!this.product.name || !this.product.price || !this.product.image || !this.product.category || !this.product.stock || !this.product.subcategory){
             return this.$notify({
               group: 'foo',
               title: 'Error',
@@ -318,7 +313,7 @@
           formData.append('category', this.product.category)
           formData.append('subcategory', this.product.subcategory)
           formData.append('image', this.product.image)
-          formData.append('str_variant', this.product.str_variant)
+          formData.append('stock', this.product.stock)
           console.log(this.product);
           axios.post(this.$url+'/products/add', formData, {
             headers: {
