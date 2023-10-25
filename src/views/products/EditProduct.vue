@@ -261,18 +261,17 @@
                   Guardar cambios
                 </button>
 
-                <!-- Divider -->
-                <hr class="mt-4 mb-5">
+                <!-- Divider || VARIANTS SECTION -->
+                <!-- <hr class="mt-4 mb-5">
 
                 <div class="mb-5 row justify-content-between align-items-center">
                   <div class="col-12">
               
-                      <!-- Heading -->
+                      
                       <h2 class="mb-2">
                           Variedades del producto
                       </h2>
               
-                      <!-- Text -->
                       <p class="text-muted mb-xl-0">
                       Agrega un color, un talle o las variantes de tu producto
                       </p>
@@ -308,19 +307,16 @@
                 <div class="card">
                       <div class="card-body" style="padding:0 10px!important;">
                   
-                          <!-- List group -->
                           <div class="list-group list-group-flush"  v-for="item in variants">
                           
                           <div class="list-group-item">
                               <div class="row align-items-center" style="margin: auto 0 !important;">
                               <div class="col">
                   
-                                  <!-- Heading -->
                                   <h4 class="mb-1" style="font-weight:600!important;">
                                   {{item.variant}}
                                   </h4>
                   
-                                  <!-- Text -->
                                   <small class="text-muted">
                                   Codigo del producto: {{item.skuCode}}
                                   </small>
@@ -328,7 +324,6 @@
                               </div>
 
                               <div class="col">
-                               <!-- Heading -->
                                <h4 class="mb-1">
                                 <b>Stock:</b> {{item.stock}}
                                 </h4>
@@ -336,7 +331,6 @@
                               </div>
 
                               <div class="col-auto">
-                                  <!-- Button -->
                                   <button class="btn btn-sm btn-danger" type="button" v-b-modal="'delete-'+item._id">
                                   Eliminar
                                   </button>
@@ -346,13 +340,13 @@
                                   </b-modal>
                   
                               </div>
-                              </div> <!-- / .row -->
+                              </div>
                           </div>
                           
                           </div>
                   
                       </div>
-                </div>
+                </div> -->
               
               
               </div>
@@ -410,7 +404,7 @@
             },
             uploadedImg: undefined,
             variant: {},
-            variants: [],
+            /*variants: [],*/
             categories: [],
             subcategories: [],
             isLoading: true,
@@ -529,7 +523,7 @@
               }, 3000);
         },
 
-        validateVariant(){
+        /*validateVariant(){
           if(!this.variant.variant || !this.variant.provider){
             this.$notify({
               group: 'foo',
@@ -542,14 +536,14 @@
           this.variant.product = this.$route.params.id
           this.variant.skuCode = this.SKUGen()
           this.saveVariant()
-        },
+        },*/
 
         SKUGen(){
           const SKU = this.product.name.substr(0,3) + '' + this.product.str_variant.substr(0,3) + '' + this.variant.variant.substr(0,3) + '' + this.variant.provider.substr(0,3)
           return SKU.toUpperCase()
         },
 
-        saveVariant(){
+        /*saveVariant(){
           const token = localStorage.getItem('token')
           axios.post(this.$url+'/variants/save', this.variant, {
               headers: {
@@ -629,7 +623,7 @@
                   type: 'error'
                 });
               })
-        },
+        },*/
         getCategories(){
             const token = localStorage.getItem('token')
             axios.get(this.$url+'/getAllCategories', {

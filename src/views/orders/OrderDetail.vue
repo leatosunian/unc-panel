@@ -123,7 +123,7 @@
                         <div class="row align-items-center">
                           <div class="col">
                             <!-- Title -->
-                            <h5 class="mb-0">N° de transacción</h5>
+                            <h5 class="mb-0">N° transacción MercadoPago</h5>
                           </div>
                           <div class="col-auto">
                             <!-- Time -->
@@ -467,10 +467,10 @@
                               {{ item.product.name.substr(0, 25) }}
                             </h4>
 
-                            <!-- Text -->
+                            <!-- 
                             <small class="text-muted">{{
                               item.variant.variant
-                            }}</small>
+                            }}</small>-->
                           </div>
                         </div>
                       </td>
