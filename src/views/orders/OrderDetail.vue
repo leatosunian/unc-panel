@@ -264,8 +264,8 @@
               </div>
             </div>
 
-            <!-- SHIPPING DATA -->
-            <div class="row">
+            <!-- SHIPPING DATA IF ADDRESS -->
+            <div v-if="order.address" class="row">
                 <div class="card-header" style="padding-left:35px">
                     <!-- Title -->
                     <h4 class="mb-0 card-header-title" style="font-size:17px">
@@ -573,7 +573,7 @@ export default {
           }
           this.details = data.details;
           this.status = this.order.statusStr
-          
+          console.log(this.order);
         });
     },
     convertCurrency(number) {
