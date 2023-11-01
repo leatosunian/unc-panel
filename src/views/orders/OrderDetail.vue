@@ -573,7 +573,6 @@ export default {
           }
           this.details = data.details;
           this.status = this.order.statusStr
-          console.log(this.order);
         });
     },
     convertCurrency(number) {

@@ -142,7 +142,6 @@ export default {
             })
         },
         saveUSDSetting(){
-            console.log(this.USDData);
             axios.put(`${this.$url}/config/usdsettings`, this.USDData, {
                 headers: {
                     "Content-Type": 'application/json',

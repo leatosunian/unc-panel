@@ -159,7 +159,6 @@ export default {
             })
         },
         saveConfig(){
-            console.log(this.settings);
             axios.post(`${this.$url}/config/shipping`, this.settings, {
                 headers: {
                     "Content-Type": 'application/json',

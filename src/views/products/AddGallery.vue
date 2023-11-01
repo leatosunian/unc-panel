@@ -242,7 +242,7 @@ export default {
                 image = $event.target.files[0]
                 
             }
-            if(image.size <= 1480000){
+            if(image.size <= 1000000){
                 if(image.type == 'image/jpeg' || image.type == 'image/png' || image.type == 'image/webp' || image.type == 'image/jpg'){
                     this.str_image = URL.createObjectURL(image)
                     this.uploadedImg = image

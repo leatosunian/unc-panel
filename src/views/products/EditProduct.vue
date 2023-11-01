@@ -627,12 +627,9 @@
                 }
             }).then((response) => {
                 const {data} = response
-                console.log(data);
                 this.categories = data
                 this.isLoading = false
                 this.subcategories = this.categories.filter(cat => cat.category.name == this.product.category)[0].subcategories
-                console.log(this.categories);
-                console.log(this.subcategories);
                 
             }).catch( error => {
                 console.log(error)
